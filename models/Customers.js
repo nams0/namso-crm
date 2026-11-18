@@ -1,4 +1,4 @@
-import { Schema, Model, models } from "mongoose"
+import { Schema, model, models } from "mongoose"
 
 const customerSchema = new Schema({
   name: { type: String, required: true, minLength: 3 },
@@ -13,6 +13,6 @@ const customerSchema = new Schema({
   updatedAt: { type: Date, default: () => Date.now() },
 })
 
-const Customer = models.Customer || Model("Customer", customerSchema)
+const Customer = models.Customer || model("Customer", customerSchema)
 
 export default Customer
