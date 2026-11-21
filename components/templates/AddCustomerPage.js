@@ -42,12 +42,41 @@ function AddCustomerPage() {
   }
 
   return (
-    <div>
-      <h4>Add new customer</h4>
-      <Form form={form} setForm={setForm} />
-      <div>
-        <button onClick={cancelHandler}>Cancel</button>
-        <button onClick={saveHandler}>Save</button>
+    <div className="mx-auto max-w-3xl">
+      <div className="mb-8 border-b border-border pb-6">
+        <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+          Customers / New
+        </p>
+
+        <h1 className="text-3xl font-bold tracking-tight text-foreground">
+          Add new customer
+        </h1>
+
+        <p className="mt-2 text-sm text-muted">
+          Enter the customer's information to create a new record.
+        </p>
+      </div>
+
+      <div className="rounded-lg border border-border bg-surface p-6 sm:p-8">
+        <Form form={form} setForm={setForm} />
+
+        <div className="mt-8 flex items-center justify-end gap-3 border-t border-border pt-6">
+          <button
+            type="button"
+            onClick={cancelHandler}
+            className="rounded-md border border-border bg-transparent px-5 py-2.5 text-sm font-medium text-muted transition-colors cursor-pointer hover:border-muted hover:bg-surface-elevated hover:text-foreground"
+          >
+            Cancel
+          </button>
+
+          <button
+            type="button"
+            onClick={saveHandler}
+            className="rounded-md bg-primary px-6 py-2.5 text-sm font-semibold text-background transition-colors cursor-pointer hover:bg-primary-hover active:scale-[0.98]"
+          >
+            Save Customer
+          </button>
+        </div>
       </div>
     </div>
   )
