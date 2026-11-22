@@ -10,9 +10,18 @@ function ItemList({ form, setForm }) {
     console.log(products)
   }
 
-  const changeHandler = (e, index) => {}
+  const changeHandler = (e, index) => {
+    const { name, value } = e.target
+    const newProducts = [...products]
+    newProducts[index][name] = value
+    setForm({ ...form, products: newProducts })
+  }
 
-  const deleteHandler = (index) => {}
+  const deleteHandler = (index) => {
+    const newProducts = [...products]
+    newProducts.splice(index, 1)
+    setForm({ ...form, products: newProducts })
+  }
 
   return (
     <div>
