@@ -25,7 +25,7 @@ function ItemList({ form, setForm }) {
   }
 
   return (
-    <section className="space-y-5">
+    <section className="max-h-100 space-y-4 overflow-y-auto scrollbar-hide">
       {/* Section Heading */}
       <div className="flex items-center justify-between border-b border-border pb-4">
         <div>
