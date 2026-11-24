@@ -1,7 +1,14 @@
 import Link from "next/link"
+import { useRouter } from "next/router"
 
 function Card({ customer }) {
-  const deleteHandler = () => {}
+  const router = useRouter()
+  const deleteHandler = async () => {
+    const res = await fetch(`/api/delete/${customer._id}`, { method: "DELETE" })
+    const data = await res.json()
+    console.log(data)
+    if (data.status === "success") router.reload()
+  }
 
   return (
     <div className="group flex flex-col justify-between gap-5 rounded-lg border border-border bg-surface mb-4 p-5 transition-colors hover:border-primary/40 sm:flex-row sm:items-center">
