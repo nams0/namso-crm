@@ -24,7 +24,10 @@ export default async function handler(req, res) {
       !email ||
       email.length < 7
     )
-      return res.status(400).json({ status: "failed", message: "Invalid data" })
+      return res.status(400).json({
+        status: "failed",
+        message: "Invalid data, insert fields correctly",
+      })
 
     try {
       const customer = await Customer.create(data)
