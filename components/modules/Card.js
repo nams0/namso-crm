@@ -48,7 +48,7 @@ function Card({ customer }) {
         <button
           type="button"
           onClick={deleteHandler}
-          className="cursor-pointer rounded-md border border-red-500/20 px-3.5 py-2 text-sm font-medium text-red-400 transition-colors hover:border-red-500/50 hover:bg-red-500/10 hover:text-red-300"
+          className="cursor-pointer rounded-md border border-red-500/20 px-3.5 py-1.5 text-sm font-medium text-red-400 transition-colors hover:border-red-500/50 hover:bg-red-500/10 hover:text-red-300"
         >
           Delete
         </button>
