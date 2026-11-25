@@ -15,6 +15,7 @@ function Form({ form, setForm }) {
           type="text"
           value={form.name}
           onChange={changeHandler}
+          required
         />
 
         <FormInput
@@ -23,6 +24,7 @@ function Form({ form, setForm }) {
           type="text"
           value={form.lastName}
           onChange={changeHandler}
+          required
         />
 
         <FormInput
@@ -31,6 +33,7 @@ function Form({ form, setForm }) {
           type="text"
           value={form.email}
           onChange={changeHandler}
+          required
         />
 
         <FormInput
