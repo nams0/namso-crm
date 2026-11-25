@@ -2,6 +2,7 @@ import { useState } from "react"
 import Form from "../modules/Form"
 import { useRouter } from "next/router"
 import moment from "moment"
+import toast from "react-hot-toast"
 
 function CustomerEditPage({ data, id }) {
   const date = data.date ? moment(data.date).utc().format("YYYY-MM-DD") : ""
@@ -30,7 +31,12 @@ function CustomerEditPage({ data, id }) {
 
     const data = await res.json()
 
-    if (data.status === "success") router.replace("/")
+    if (data.status === "success") {
+      toast.success("Customer updated successfully!")
+      router.replace("/")
+    } else {
+      toast.error(data.message || "Failed to update customer!")
+    }
   }
 
   return (

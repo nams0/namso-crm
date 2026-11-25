@@ -1,6 +1,7 @@
 import moment from "moment"
 import Link from "next/link"
 import { useRouter } from "next/router"
+import toast from "react-hot-toast"
 
 function CustomerDetailsPage({ data }) {
   const router = useRouter()
@@ -12,7 +13,12 @@ function CustomerDetailsPage({ data }) {
 
     const result = await res.json()
 
-    if (result.status === "success") router.replace("/")
+    if (result.status === "success") {
+      toast.success("Customer deleted successfully!")
+      router.replace("/")
+    } else {
+      toast.error(result.message || "Failed to delete customer!")
+    }
   }
 
   return (

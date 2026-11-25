@@ -1,6 +1,7 @@
 import { useState } from "react"
 import Form from "../modules/Form"
 import { useRouter } from "next/router"
+import toast from "react-hot-toast"
 
 function AddCustomerPage() {
   const [form, setForm] = useState({
@@ -23,8 +24,12 @@ function AddCustomerPage() {
       headers: { "Content-Type": "application/json" },
     })
     const data = await res.json()
-    console.log(data)
-    if (data.status === "success") router.replace("/")
+    if (data.status === "success") {
+      toast.success("Customer created successfully!")
+      router.replace("/")
+    } else {
+      toast.error(data.message || "Failed to create customer!")
+    }
   }
 
   const cancelHandler = () => {

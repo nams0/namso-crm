@@ -1,8 +1,37 @@
 import Link from "next/link"
+import { Toaster } from "react-hot-toast"
 
 function Layout({ children }) {
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
+      <Toaster
+        position="top-center"
+        reverseOrder={false}
+        toastOptions={{
+          duration: 3000,
+          style: {
+            background: "#0b100d",
+            color: "#e6f4e9",
+            border: "1px solid #1b3022",
+            borderRadius: "6px",
+            padding: "14px 16px",
+            fontSize: "14px",
+          },
+          success: {
+            iconTheme: {
+              primary: "#00ff41",
+              secondary: "#050706",
+            },
+          },
+          error: {
+            iconTheme: {
+              primary: "#ef4444",
+              secondary: "#050706",
+            },
+          },
+        }}
+      />
+
       {/* Header */}
       <header className="sticky top-0 z-50 border-b border-border bg-surface">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
