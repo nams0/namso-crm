@@ -1,4 +1,5 @@
 import Customer from "@/models/Customers"
+import connectDB from "@/utils/connectDB"
 
 export default async function handler(req, res) {
   try {
